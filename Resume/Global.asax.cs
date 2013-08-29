@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Dal;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -16,6 +18,8 @@ namespace Resume
     {
         protected void Application_Start()
         {
+            
+            var initializeDatabase = new ResumeContext().UserProfiles.Where(u => u.UserId == 1);
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

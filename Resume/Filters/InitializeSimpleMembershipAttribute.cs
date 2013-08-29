@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using Resume.Models;
+using Dal;
 
 namespace Resume.Filters
 {
@@ -25,11 +26,11 @@ namespace Resume.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<ResumeContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new ResumeContext())
                     {
                         if (!context.Database.Exists())
                         {
@@ -38,7 +39,7 @@ namespace Resume.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("Resume", "UserProfiles", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

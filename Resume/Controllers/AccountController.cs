@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using Resume.Filters;
 using Resume.Models;
+using Dal;
+using Model;
 
 namespace Resume.Controllers
 {
@@ -263,7 +265,7 @@ namespace Resume.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (ResumeContext db = new ResumeContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
