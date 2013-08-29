@@ -18,8 +18,12 @@ namespace Resume
     {
         protected void Application_Start()
         {
-            
             var initializeDatabase = new ResumeContext().UserProfiles.Where(u => u.UserId == 1);
+
+            Bootstrapper.Initialise();
+
+            AutoMapperRegistrations.Initialize();
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

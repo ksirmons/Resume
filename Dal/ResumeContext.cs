@@ -1,4 +1,10 @@
-﻿using Dal.Configurations;
+﻿//-----------------------------------------------------------------------
+// <copyright file="ResumeContext.cs" company="Keith Sirmons">
+//     Copyright (c) Keith Sirmons. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+ 
+using Dal.Configurations;
 using Model;
 using System;
 using System.Collections.Generic;
