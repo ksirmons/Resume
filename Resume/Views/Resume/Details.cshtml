@@ -1,7 +1,9 @@
-﻿@model Resume.Models.ResumeViewModel
+﻿@model Resume.Web.Models.ResumeViewModel
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+<div>@Html.LabelFor(m => m.Name)</div>
+<div>@Html.DisplayFor(m =>m.Name)</div>

@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201308290019135_AddResumeAndAddress.Designer.cs">
       <DependentUpon>201308290019135_AddResumeAndAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201308300300200_RequireResumeName.cs" />
+    <Compile Include="Migrations\201308300300200_RequireResumeName.Designer.cs">
+      <DependentUpon>201308300300200_RequireResumeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ResumeRepository.cs" />
     <Compile Include="ResumeContext.cs" />
@@ -75,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201308290019135_AddResumeAndAddress.resx">
       <DependentUpon>201308290019135_AddResumeAndAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308300300200_RequireResumeName.resx">
+      <DependentUpon>201308300300200_RequireResumeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

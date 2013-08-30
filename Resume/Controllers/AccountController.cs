@@ -8,12 +8,12 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using Resume.Filters;
-using Resume.Models;
+using Resume.Web.Filters;
+using Resume.Web.Models;
 using Dal;
 using Model;
 
-namespace Resume.Controllers
+namespace Resume.Web.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]

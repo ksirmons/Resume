@@ -7,6 +7,8 @@ namespace Model.IRepositories
 {
     public interface IResumeRepository
     {
+        IEnumerable<Resume> All();
+
         Resume GetResumeById(int id);
 
         void DeleteResume(Resume resume);

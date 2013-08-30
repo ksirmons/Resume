@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
 
-namespace Resume.Models
+namespace Resume.Web.Models
 {
     public class RegisterExternalLoginModel
     {

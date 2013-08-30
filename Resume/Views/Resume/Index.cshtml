@@ -1,0 +1,33 @@
+﻿@model Resume.Web.Models.ResumeIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Resumes</h2>
+<div>
+    @Html.ActionLink("Create Resume", "Create", "Resume", null)
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                </td>
+                <td>Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ResumeItems)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("View", "Details", "Resume", new { id = item.Id}, null)
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

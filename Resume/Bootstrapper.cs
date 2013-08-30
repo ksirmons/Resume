@@ -5,7 +5,7 @@ using Model.IRepositories;
 using Dal.Repositories;
 using Dal;
 
-namespace Resume
+namespace Resume.Web
 {
   public static class Bootstrapper
   {

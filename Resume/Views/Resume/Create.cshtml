@@ -1,0 +1,15 @@
+﻿@model Resume.Web.Models.ResumeCreateModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create New Resume</h2>
+@using(Html.BeginForm())
+{
+    <div>Name</div>
+    <div>@Html.EditorFor(m => m.Name)</div>
+    <div>
+        <button type="submit">Create</button>
+    </div>
+}

@@ -15,6 +15,8 @@ namespace Dal.Configurations
             HasKey(e => e.Id);
 
             HasOptional(e => e.Address);
+
+            Property(e => e.Name).IsRequired();
         }
     }
 }

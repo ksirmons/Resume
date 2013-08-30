@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Resume.Models
+namespace Resume.Web.Models
 {
     public class ResumeViewModel
     {

@@ -1,12 +1,13 @@
-﻿using Model.IRepositories;
-using Resume.Models;
+﻿using AutoMapper;
+using Model.IRepositories;
+using Resume.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Resume.Controllers
+namespace Resume.Web.Controllers
 {
     public class ResumeController : Controller
     {
@@ -23,7 +24,9 @@ namespace Resume.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var indexViewModel = new ResumeIndexViewModel();
+            indexViewModel.ResumeItems = Mapper.Map<IEnumerable<ResumeIndexItemViewModel>>(this.resumeRepository.All());
+            return View(indexViewModel);
         }
 
         //
@@ -40,24 +43,37 @@ namespace Resume.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var createModel = new ResumeCreateModel();
+            return View(createModel);
         }
 
         //
         // POST: /Resume/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ResumeCreateModel createModel)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    Model.Resume createResume = new Model.Resume();
+                    createResume.Name = createModel.Name;
 
-                return RedirectToAction("Index");
+                    resumeRepository.AddOrUpdateResume(createResume);
+
+                    resumeRepository.Save();
+
+                    return RedirectToAction("Edit", new { id = createResume.Id });
+                }
+                else
+                {
+                    return View(createModel);
+                }
             }
             catch
             {
-                return View();
+                return View(createModel);
             }
         }
 
